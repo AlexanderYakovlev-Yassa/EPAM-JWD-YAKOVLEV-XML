@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gems 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:"GemsXSD.xml">
-	<gem preciousness="precious">
-		<id>536A8765</id>
+      	xmlns="http://www.example.com/gems"
+		xsi:schemaLocation="http://www.example.com/students gems.xsd">
+	<gem id="1">
+		<preciousness>precious</preciousness>
 		<name>diamond</name>		
+		<value>25</value>
+		<color>yellow</color>
 		<origin>SouthAfrica</origin>
-		<value>25</value>		
-		<visual_parameter>
-			<color>yellow</color>
-			<trnselusence>70</trnselusence>
-			<cutting>16</cutting>
-		</visual_parameter>
+		<purchaseDate>2020-01-21</purchaseDate>		
 	</gem>
-	<gem preciousness="precious">
-		<id>536A8357</id>
+	<treatedGem id="536A8766">
+		<preciousness>precious</preciousness>
 		<name>diamond</name>		
-		<origin>Russia</origin>
-		<value>15</value>		
-		<visual_parameter>
-			<color>gray</color>
-			<trnselusence>60</trnselusence>
-			<cutting>32</cutting>
-		</visual_parameter>
-	</gem>
+		<value>20</value>
+		<color>yellow</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>2020-01-21</purchaseDate>	
+		<translucency>70</translucency>
+		<facetsCount>32</facetsCount>
+	</treatedGem>
 </gems>
