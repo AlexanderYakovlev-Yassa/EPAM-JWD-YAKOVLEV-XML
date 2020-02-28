@@ -14,6 +14,7 @@
 		<annotation.version>17.0.0</annotation.version>
 		<log4j2.version>2.11.2</log4j2.version>
 		<maven-compiler-plugin.version>1.8</maven-compiler-plugin.version>
+		<org.apache.karaf.specs.java.xml>4.3.0.RC1</org.apache.karaf.specs.java.xml>
 	</properties>
 	
 	<dependencies>
@@ -41,6 +42,13 @@
 			<artifactId>log4j-core</artifactId>
 			<version>${log4j2.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.karaf.specs</groupId>
+			<artifactId>org.apache.karaf.specs.java.xml</artifactId>
+			<version>${org.apache.karaf.specs.java.xml}</version>
+		</dependency>
+	
 	
 	</dependencies>
 	
