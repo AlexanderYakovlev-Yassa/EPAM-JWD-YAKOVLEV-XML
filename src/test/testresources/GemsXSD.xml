@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.example.com/gems"
+xmlns:tns="http://www.example.com/gems"
+elementFormDefault="qualified">
+
+<element name="gems">
+	<complexType>
+		<all>
+
+			<element name="gem"
+			type="tns:Gem" />
+
+			<element name="treatedGem"
+			type="tns:TreatedGem" />
+
+		</all>
+	</complexType>
+</element>
+
+<complexType name="Gem">
+	<sequence>
+		<element name="preciousness" type="tns:Preciousness" />
+		<element name="name">
+          <simpleType>
+          	<restriction base="string">
+            	<pattern value="[a-z]+" />
+          	</restriction>
+          </simpleType>
+      	</element>
+		<element name="value">
+      		<simpleType>
+          		<restriction base="decimal">
+            		<minExclusive value="0" />
+          		</restriction>
+          	</simpleType>
+      </element>
+		<element name="color" type="string" />
+		<element name="origin" type="string" />
+		<element name="purchaseDate" type="date" />
+	</sequence>
+	<attribute name="id" type="ID" />
+</complexType>
+
+<simpleType name="Preciousness">
+	<restriction base="string">
+		<enumeration value="precious"></enumeration>
+		<enumeration value="semi_precious"></enumeration>
+		<enumeration value="regular"></enumeration>
+	</restriction>
+</simpleType>
+
+<complexType name="TreatedGem">
+	<complexContent>
+		<extension base="tns:Gem">
+          <sequence>
+			<element name="translucency">
+              <simpleType>
+                <restriction base="integer">
+                	<minInclusive value="0" />
+                	<maxInclusive value="100" />
+                </restriction>
+              </simpleType>
+            </element>
+			<element name="facetsCount">
+              <simpleType>
+                <restriction base="integer">
+                  <minInclusive value="4" />
+                </restriction>
+              </simpleType>
+            </element>
+          </sequence>
+		</extension>
+	</complexContent>
+</complexType>
+
+</schema>
