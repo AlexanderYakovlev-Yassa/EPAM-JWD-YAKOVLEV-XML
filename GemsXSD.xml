@@ -45,7 +45,7 @@ elementFormDefault="qualified">
 <simpleType name="Preciousness">
 	<restriction base="string">
 		<enumeration value="precious"></enumeration>
-		<enumeration value="semiprecious"></enumeration>
+		<enumeration value="semi_precious"></enumeration>
 		<enumeration value="regular"></enumeration>
 	</restriction>
 </simpleType>

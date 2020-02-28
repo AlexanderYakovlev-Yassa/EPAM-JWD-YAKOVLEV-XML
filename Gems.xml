@@ -2,7 +2,7 @@
 <gems 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       	xmlns="http://www.example.com/gems"
 		xsi:schemaLocation="http://www.example.com/students gems.xsd">
-	<gem id="1">
+	<gem id="A36A8766">
 		<preciousness>precious</preciousness>
 		<name>diamond</name>		
 		<value>25</value>
@@ -10,7 +10,7 @@
 		<origin>SouthAfrica</origin>
 		<purchaseDate>2020-01-21</purchaseDate>		
 	</gem>
-	<treatedGem id="536A8766">
+	<treatedGem id="A36A8766">
 		<preciousness>precious</preciousness>
 		<name>diamond</name>		
 		<value>20</value>
