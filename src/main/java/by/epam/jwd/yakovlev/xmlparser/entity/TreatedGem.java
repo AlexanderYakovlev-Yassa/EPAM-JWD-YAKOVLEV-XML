@@ -4,11 +4,13 @@ import java.util.Objects;
 
 public class TreatedGem extends Gem{
 
+    double translucency;
     int facetsCount;
 
-    public TreatedGem(Preciousness preciousness, String id, String name, String origin, double value, String color, int translucence, int facetsCount) {
-        super(preciousness, id, name, origin, value, color, translucence);
+    public TreatedGem(Preciousness preciousness, String id, String name, String origin, double value, String color, double translucency, int facetsCount) {
+        super(id, name, preciousness, origin, value, color);
         this.facetsCount = facetsCount;
+        this.translucency = translucency;
     }
 
     public TreatedGem(int facetsCount) {
@@ -24,6 +26,14 @@ public class TreatedGem extends Gem{
 
     public void setFacetsCount(int facetsCount) {
         this.facetsCount = facetsCount;
+    }
+
+    public double getTranslucency() {
+        return translucency;
+    }
+
+    public void setTranslucency(double translucency) {
+        this.translucency = translucency;
     }
 
     @Override
@@ -43,7 +53,8 @@ public class TreatedGem extends Gem{
 
         TreatedGem that = (TreatedGem) o;
 
-        return getFacetsCount() == that.getFacetsCount();
+        return getFacetsCount() == that.getFacetsCount() &&
+                getTranslucency() == that.getTranslucency();
     }
 
     @Override
@@ -54,6 +65,7 @@ public class TreatedGem extends Gem{
 
         res = res + prime * super.hashCode();
         res = res + prime * facetsCount;
+        res = res + prime * Double.valueOf(translucency).hashCode();
 
         return res;
     }

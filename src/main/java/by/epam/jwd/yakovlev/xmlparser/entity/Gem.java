@@ -1,25 +1,26 @@
 package by.epam.jwd.yakovlev.xmlparser.entity;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Objects;
 
 public class Gem {
 
-    private Preciousness preciousness;
     private String id;
     private String name;
+    private Preciousness preciousness;
     private String origin;
     private double value;
     private String color;
-    private int translucence;
+    private GregorianCalendar purchaseDate;
 
-    public Gem(Preciousness preciousness, String id, String name, String origin, double value, String color, int translucence) {
-        this.preciousness = preciousness;
+    public Gem(String id, String name, Preciousness preciousness, String origin, double value, String color) {
         this.id = id;
         this.name = name;
+        this.preciousness = preciousness;
         this.origin = origin;
         this.value = value;
         this.color = color;
-        this.translucence = translucence;
     }
 
     public Gem() {
@@ -73,12 +74,12 @@ public class Gem {
         this.color = color;
     }
 
-    public int getTranslucence() {
-        return translucence;
+    public GregorianCalendar getPurchaseDate() {
+        return purchaseDate;
     }
 
-    public void setTranslucence(int translucence) {
-        this.translucence = translucence;
+    public void setPurchaseDate(GregorianCalendar purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
     @Override
@@ -92,12 +93,16 @@ public class Gem {
         Gem gem = (Gem) o;
 
         return Double.compare(gem.getValue(), getValue()) == 0 &&
-                getTranslucence() == gem.getTranslucence() &&
                 getPreciousness() == gem.getPreciousness() &&
-                Objects.equals(getId(), gem.getId()) &&
-                Objects.equals(getName(), gem.getName()) &&
-                Objects.equals(getOrigin(), gem.getOrigin()) &&
-                Objects.equals(getColor(), gem.getColor());
+                id.equals(gem.id) &&
+                name.equals(gem.name) &&
+                origin.equals(gem.origin) &&
+                color.equals((gem.color)) &&
+                purchaseDate != null &&
+                gem.purchaseDate != null &&
+                purchaseDate.get(Calendar.YEAR) == gem.purchaseDate.get(Calendar.YEAR) &&
+                purchaseDate.get(Calendar.MONTH) == gem.purchaseDate.get(Calendar.MONTH) &&
+                purchaseDate.get(Calendar.DAY_OF_MONTH) == gem.purchaseDate.get(Calendar.DAY_OF_MONTH);
     }
 
     @Override
@@ -112,8 +117,11 @@ public class Gem {
         res = res + prime * (origin == null ? 0 : origin.hashCode());
         res = res + prime * Double.hashCode(value);
         res = res + prime * (color == null ? 0 : color.hashCode());
-        res = res + prime * translucence;
-
+        if (purchaseDate != null) {
+            res = res + prime * purchaseDate.get(Calendar.YEAR);
+            res = res + prime * purchaseDate.get(Calendar.MONTH);
+            res = res + prime * purchaseDate.get(Calendar.DAY_OF_MONTH);
+        }
         return res;
     }
 }
