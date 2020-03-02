@@ -15,6 +15,7 @@
 		<log4j2.version>2.11.2</log4j2.version>
 		<maven-compiler-plugin.version>1.8</maven-compiler-plugin.version>
 		<org.apache.karaf.specs.java.xml>4.3.0.RC1</org.apache.karaf.specs.java.xml>
+		<xml-apis>1.4.01</xml-apis>
 	</properties>
 	
 	<dependencies>
@@ -47,6 +48,12 @@
 			<groupId>org.apache.karaf.specs</groupId>
 			<artifactId>org.apache.karaf.specs.java.xml</artifactId>
 			<version>${org.apache.karaf.specs.java.xml}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>${xml-apis}</version>
 		</dependency>
 	
 	
