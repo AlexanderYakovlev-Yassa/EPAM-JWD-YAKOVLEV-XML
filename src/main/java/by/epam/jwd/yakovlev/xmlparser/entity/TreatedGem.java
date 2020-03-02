@@ -2,7 +2,7 @@ package by.epam.jwd.yakovlev.xmlparser.entity;
 
 import java.util.Objects;
 
-public class TreatedGem extends Gem{
+public class TreatedGem extends Gem {
 
     double translucency;
     int facetsCount;
@@ -36,9 +36,45 @@ public class TreatedGem extends Gem{
         this.translucency = translucency;
     }
 
+    public void setParameter(String parameter, String parameterValue) {
+
+        if (parameter == null || parameterValue == null) {
+            return;
+        }
+
+        GemParameters parameterEnum = GemParameters.getParameterByTag(parameter);
+
+        if (parameterEnum == null){
+            return;
+        }
+
+        setParameter(parameterEnum, parameterValue);
+    }
+
+    public void setParameter(GemParameters parameter, String parameterValue) {
+
+        if (parameter == null || parameterValue == null) {
+            return;
+        }
+
+        switch (parameter) {
+            case TRANSLUCENCY_TAG: {
+                setTranslucency(Double.parseDouble(parameterValue));
+                break;
+            }
+            case FACETS_COUNT_TAG: {
+                setFacetsCount(Integer.parseInt(parameterValue));
+                break;
+            }
+            default: {
+                super.setParameter(parameter, parameterValue);
+            }
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (o == null){
+        if (o == null) {
             return false;
         }
         if (this == o) {

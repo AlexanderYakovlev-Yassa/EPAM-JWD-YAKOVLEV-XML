@@ -4,15 +4,15 @@ public enum GemParameters {
 
     GEM_CLASS_NAME ("gem"),
     TREATED_GEM_CLASS_NAME ("treatedGem"),
-    PRECIOUSNESS_TAG ("preciousness"),
     ID_TAG ("id"),
+    PRECIOUSNESS_TAG ("preciousness"),
     NAME_TAG ("name"),
     VALUE_TAG ("value"),
     COLOR_TAG ("color"),
     ORIGIN_TAG ("origin"),
-    PURCHASE_DATE ("purchaseDate"),
-    TRANSLUCENCY ("translucency"),
-    FACETS_COUNT ("facetsCount");
+    PURCHASE_DATE_TAG("purchaseDate"),
+    TRANSLUCENCY_TAG("translucency"),
+    FACETS_COUNT_TAG("facetsCount");
     
     private String tagName;
 
@@ -22,5 +22,21 @@ public enum GemParameters {
 
     public String getTagName() {
         return tagName;
+    }
+
+    public static GemParameters getParameterByTag(String tagName){
+
+        for (GemParameters gp : values()){
+
+            if (tagName == null) {
+                return  null;
+            }
+
+            if (gp.tagName == tagName){
+                return gp;
+            }
+        }
+
+        return null;
     }
 }

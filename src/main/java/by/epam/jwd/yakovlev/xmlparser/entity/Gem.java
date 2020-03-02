@@ -1,10 +1,14 @@
 package by.epam.jwd.yakovlev.xmlparser.entity;
 
+import by.epam.jwd.yakovlev.xmlparser.util.DateTimeUtil;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
 public class Gem {
+
+    private static final DateTimeUtil DATE_TIME_UTIL = new DateTimeUtil();
 
     private String id;
     private String name;
@@ -80,6 +84,63 @@ public class Gem {
 
     public void setPurchaseDate(GregorianCalendar purchaseDate) {
         this.purchaseDate = purchaseDate;
+    }
+
+    public void setParameter(String parameter, String parameterValue){
+
+        if (parameter == null || parameterValue == null) {
+            return;
+        }
+
+        GemParameters parameterEnum = GemParameters.getParameterByTag(parameter);
+
+        if (parameterEnum == null){
+            return;
+        }
+
+        setParameter(parameterEnum, parameterValue);
+    }
+
+    public void setParameter(GemParameters parameter, String parameterValue){
+
+        if (parameter == null || parameterValue == null) {
+            return;
+        }
+
+        switch (parameter) {
+            case ID_TAG: {
+                setId(parameterValue);
+                break;
+            }
+            case NAME_TAG: {
+                setName(parameterValue);
+                break;
+            }
+            case PRECIOUSNESS_TAG: {
+                setPreciousness(Preciousness.getInstance(parameterValue));
+                break;
+            }
+            case COLOR_TAG: {
+                setColor(parameterValue);
+                break;
+            }
+            case VALUE_TAG: {
+                setValue(Double.parseDouble(parameterValue));
+                break;
+            }
+            case ORIGIN_TAG: {
+                setOrigin(parameterValue);
+                break;
+            }
+            case PURCHASE_DATE_TAG: {
+                setPurchaseDate(DATE_TIME_UTIL.parseToDate(parameterValue));
+                break;
+            }
+            default: {
+                throw new EnumConstantNotPresentException(
+                        parameter.getDeclaringClass(), parameter.name());
+            }
+        }
     }
 
     @Override

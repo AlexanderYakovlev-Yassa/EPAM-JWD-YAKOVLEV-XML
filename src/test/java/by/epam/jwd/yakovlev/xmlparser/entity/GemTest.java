@@ -33,10 +33,6 @@ public class GemTest {
 
         Assert.assertTrue(gem1.hashCode() == gem2.hashCode());
         Assert.assertFalse(gem1.hashCode() == gem3.hashCode());
-
-        System.out.println(gem1.hashCode());
-        System.out.println(gem2.hashCode());
-        System.out.println(gem3.hashCode());
     }
 
     private Gem getGem(){
