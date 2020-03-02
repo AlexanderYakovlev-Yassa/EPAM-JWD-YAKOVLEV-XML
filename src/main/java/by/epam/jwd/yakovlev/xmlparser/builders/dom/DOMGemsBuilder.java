@@ -1,4 +1,4 @@
-package by.epam.jwd.yakovlev.xmlparser.builders;
+package by.epam.jwd.yakovlev.xmlparser.builders.dom;
 
 import java.io.IOException;
 import java.util.GregorianCalendar;
@@ -8,10 +8,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import by.epam.jwd.yakovlev.xmlparser.builders.AbstractGemsBuilder;
 import by.epam.jwd.yakovlev.xmlparser.entity.Gem;
 import by.epam.jwd.yakovlev.xmlparser.entity.GemParameters;
 import by.epam.jwd.yakovlev.xmlparser.entity.Preciousness;
 import by.epam.jwd.yakovlev.xmlparser.entity.TreatedGem;
+import by.epam.jwd.yakovlev.xmlparser.exception.XMLParserException;
 import by.epam.jwd.yakovlev.xmlparser.util.DateTimeUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -19,29 +21,31 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class DOMBuilder {
+public class DOMGemsBuilder extends AbstractGemsBuilder {
 
     private static final DateTimeUtil DATE_TIME_UTIL = new DateTimeUtil();
 
     private Set<Gem> gems;
     private DocumentBuilder docBuilder;
 
-    public DOMBuilder() {
+    public DOMGemsBuilder() throws XMLParserException {
         this.gems = new HashSet<Gem>();
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             docBuilder = factory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            System.err.println("Ошибка конфигурации парсера: " + e);
+            throw new XMLParserException("Parser configuration error: " + e, e);
         }
     }
 
+    @Override
     public Set<Gem> getGems() {
         return gems;
     }
 
-    public void buildGemsSet(String fileName) {
+    @Override
+    public void buildGemsSet(String fileName) throws XMLParserException {
 
         Document doc = null;
 
@@ -64,11 +68,12 @@ public class DOMBuilder {
                 gems.add(gem);
             }
         } catch (IOException e) {
-            System.err.println("File error or I/O error: " + e);
+            throw new XMLParserException("File error or I/O error: " + e, e);
         } catch (SAXException e) {
-            System.err.println("Parsing failure: " + e);
+            throw new XMLParserException("Parsing failure: " + e, e);
         }
     }
+
     private Gem buildGem(Element gemElement) {
 
         Gem gem = null;
@@ -80,7 +85,7 @@ public class DOMBuilder {
         String origin = getElementTextContent(gemElement,  GemParameters.ORIGIN_TAG.getTagName());
         String color = getElementTextContent(gemElement,  GemParameters.COLOR_TAG.getTagName());
         double value = Double.valueOf(getElementTextContent(gemElement,  GemParameters.VALUE_TAG.getTagName()));
-        String date = getElementTextContent(gemElement,  GemParameters.PURCHASE_DATE.getTagName());
+        String date = getElementTextContent(gemElement,  GemParameters.PURCHASE_DATE_TAG.getTagName());
         GregorianCalendar purchaseDate = DATE_TIME_UTIL.parseToDate(date);
 
         if (gemElement.getTagName().equals(GemParameters.GEM_CLASS_NAME.getTagName())){
@@ -91,8 +96,8 @@ public class DOMBuilder {
 
             TreatedGem treatedGem = new TreatedGem();
 
-            String translucency = getElementTextContent(gemElement,  GemParameters.TRANSLUCENCY.getTagName());
-            String facetsCount = getElementTextContent(gemElement,  GemParameters.FACETS_COUNT.getTagName());
+            String translucency = getElementTextContent(gemElement,  GemParameters.TRANSLUCENCY_TAG.getTagName());
+            String facetsCount = getElementTextContent(gemElement,  GemParameters.FACETS_COUNT_TAG.getTagName());
 
             treatedGem.setTranslucency(Double.valueOf(translucency));
             treatedGem.setFacetsCount(Integer.valueOf(facetsCount));
