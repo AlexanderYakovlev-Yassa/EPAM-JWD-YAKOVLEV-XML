@@ -3,6 +3,7 @@ package by.epam.jwd.yakovlev.xmlparser.entity;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import static org.junit.Assert.*;
@@ -33,6 +34,7 @@ public class GemTest {
 
         Assert.assertTrue(gem1.hashCode() == gem2.hashCode());
         Assert.assertFalse(gem1.hashCode() == gem3.hashCode());
+        System.out.println(gem1.getPurchaseDate().toInstant());
     }
 
     private Gem getGem(){
