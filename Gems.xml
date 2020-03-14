@@ -10,7 +10,129 @@
 		<origin>SouthAfrica</origin>
 		<purchaseDate>2020-01-21</purchaseDate>		
 	</gem>
+	<gem id="A36A8767">
+		<preciousness>precious</preciousness>
+		<name>emerald</name>		
+		<value>25</value>
+		<color>green</color>
+		<origin>Russia</origin>
+		<purchaseDate>2018-05-07</purchaseDate>		
+	</gem>
+	<gem id="A36A8768">
+		<preciousness>precious</preciousness>
+		<name>amethyst</name>		
+		<value>15</value>
+		<color>purple</color>
+		<origin>Russia</origin>
+		<purchaseDate>2020-01-21</purchaseDate>		
+	</gem>
+	<gem id="A36A8769">
+		<preciousness>precious</preciousness>
+		<name>garnet</name>		
+		<value>5</value>
+		<color>red</color>
+		<origin>SouthAfrica</origin>
+		<purchaseDate>2019-03-07</purchaseDate>		
+	</gem>
+	<gem id="A36A8770">
+		<preciousness>precious</preciousness>
+		<name>diamond</name>		
+		<value>25</value>
+		<color>white</color>
+		<origin>SouthAfrica</origin>
+		<purchaseDate>2020-01-21</purchaseDate>		
+	</gem>
 	<treatedGem id="A36A8766">
+		<preciousness>precious</preciousness>
+		<name>diamond</name>		
+		<value>20</value>
+		<color>yellow</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>2020-01-21</purchaseDate>	
+		<translucency>70</translucency>
+		<facetsCount>32</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8886">
+		<preciousness>precious</preciousness>
+		<name>amethyst</name>		
+		<value>20</value>
+		<color>purple</color>
+		<origin>Russia</origin>
+      	<purchaseDate>2011-01-21</purchaseDate>	
+		<translucency>30</translucency>
+		<facetsCount>18</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8710">
+		<preciousness>precious</preciousness>
+		<name>clinohumid</name>		
+		<value>20</value>
+		<color>orange</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>201-01-21</purchaseDate>	
+		<translucency>70</translucency>
+		<facetsCount>32</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8711">
+		<preciousness>precious</preciousness>
+		<name>emerald</name>		
+		<value>20</value>
+		<color>green</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>2012-01-28</purchaseDate>	
+		<translucency>30</translucency>
+		<facetsCount>16</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8712">
+		<preciousness>precious</preciousness>
+		<name>tourmaline</name>		
+		<value>20</value>
+		<color>red</color>
+		<origin>Red</origin>
+      	<purchaseDate>2020-01-21</purchaseDate>	
+		<translucency>60</translucency>
+		<facetsCount>12</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8713">
+		<preciousness>precious</preciousness>
+		<name>diamond</name>		
+		<value>20</value>
+		<color>yellow</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>2020-01-21</purchaseDate>	
+		<translucency>70</translucency>
+		<facetsCount>32</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8715">
+		<preciousness>precious</preciousness>
+		<name>diamond</name>		
+		<value>20</value>
+		<color>yellow</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>2020-01-21</purchaseDate>	
+		<translucency>70</translucency>
+		<facetsCount>32</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8236">
+		<preciousness>precious</preciousness>
+		<name>diamond</name>		
+		<value>20</value>
+		<color>yellow</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>2020-01-21</purchaseDate>	
+		<translucency>70</translucency>
+		<facetsCount>32</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A5252">
+		<preciousness>precious</preciousness>
+		<name>diamond</name>		
+		<value>20</value>
+		<color>yellow</color>
+		<origin>SouthAfrica</origin>
+      	<purchaseDate>2020-01-21</purchaseDate>	
+		<translucency>70</translucency>
+		<facetsCount>32</facetsCount>
+	</treatedGem>
+	<treatedGem id="A36A8686">
 		<preciousness>precious</preciousness>
 		<name>diamond</name>		
 		<value>20</value>
