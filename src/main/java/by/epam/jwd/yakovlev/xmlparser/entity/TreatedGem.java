@@ -1,7 +1,5 @@
 package by.epam.jwd.yakovlev.xmlparser.entity;
 
-import java.util.Objects;
-
 public class TreatedGem extends Gem {
 
     double translucency;

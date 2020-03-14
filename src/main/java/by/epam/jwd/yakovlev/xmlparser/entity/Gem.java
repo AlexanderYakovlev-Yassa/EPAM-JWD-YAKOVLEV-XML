@@ -4,7 +4,6 @@ import by.epam.jwd.yakovlev.xmlparser.util.DateTimeUtil;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Objects;
 
 public class Gem {
 
