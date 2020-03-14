@@ -1,12 +1,9 @@
-package by.epam.jwd.yakovlev.xmlparser.builders;
+package by.epam.jwd.yakovlev.xmlparser.parsers;
 
 import by.epam.jwd.yakovlev.xmlparser.entity.Gem;
-import by.epam.jwd.yakovlev.xmlparser.entity.GemParameters;
-import by.epam.jwd.yakovlev.xmlparser.entity.Preciousness;
-import by.epam.jwd.yakovlev.xmlparser.entity.TreatedGem;
 import by.epam.jwd.yakovlev.xmlparser.exception.XMLParserException;
-import by.epam.jwd.yakovlev.xmlparser.util.DateTimeUtil;
 
+import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,7 +23,7 @@ public abstract class AbstractGemsBuilder {
         return gems;
     }
 
-    abstract public void buildGemsSet(String fileName) throws XMLParserException;
+    abstract public void buildGemsSet(InputStream XMLFileStream) throws XMLParserException;
 
     protected void setGemParameter(Gem gem, String parameterName, String parameterValue) {
 

@@ -1,6 +1,7 @@
-package by.epam.jwd.yakovlev.xmlparser.builders.dom;
+package by.epam.jwd.yakovlev.xmlparser.parsers.dom;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
@@ -8,7 +9,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import by.epam.jwd.yakovlev.xmlparser.builders.AbstractGemsBuilder;
+import by.epam.jwd.yakovlev.xmlparser.parsers.AbstractGemsBuilder;
 import by.epam.jwd.yakovlev.xmlparser.entity.Gem;
 import by.epam.jwd.yakovlev.xmlparser.entity.GemParameters;
 import by.epam.jwd.yakovlev.xmlparser.entity.Preciousness;
@@ -45,12 +46,12 @@ public class DOMGemsBuilder extends AbstractGemsBuilder {
     }
 
     @Override
-    public void buildGemsSet(String fileName) throws XMLParserException {
+    public void buildGemsSet(InputStream XMLFileStream) throws XMLParserException {
 
         Document doc = null;
 
         try {
-            doc = docBuilder.parse(fileName);
+            doc = docBuilder.parse(XMLFileStream);
             Element root = doc.getDocumentElement();
 
             NodeList gemList = root.getElementsByTagName(GemParameters.GEM_CLASS_NAME.getTagName());

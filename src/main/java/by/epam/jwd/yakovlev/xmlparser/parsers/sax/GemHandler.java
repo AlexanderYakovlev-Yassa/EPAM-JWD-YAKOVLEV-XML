@@ -1,4 +1,4 @@
-package by.epam.jwd.yakovlev.xmlparser.builders.sax;
+package by.epam.jwd.yakovlev.xmlparser.parsers.sax;
 
 import java.util.EnumSet;
 import java.util.HashSet;
@@ -6,7 +6,6 @@ import java.util.Set;
 
 import by.epam.jwd.yakovlev.xmlparser.entity.Gem;
 import by.epam.jwd.yakovlev.xmlparser.entity.GemParameters;
-import by.epam.jwd.yakovlev.xmlparser.entity.Preciousness;
 import by.epam.jwd.yakovlev.xmlparser.entity.TreatedGem;
 import by.epam.jwd.yakovlev.xmlparser.util.DateTimeUtil;
 import org.xml.sax.Attributes;
