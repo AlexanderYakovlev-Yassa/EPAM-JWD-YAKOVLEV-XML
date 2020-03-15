@@ -7,7 +7,6 @@ import by.epam.jwd.yakovlev.xmlparser.exception.ServiceException;
 import by.epam.jwd.yakovlev.xmlparser.exception.XMLParserException;
 import by.epam.jwd.yakovlev.xmlparser.service.ServiceFactory;
 import by.epam.jwd.yakovlev.xmlparser.service.XMLService;
-import by.epam.jwd.yakovlev.xmlparser.validator.XSDValidator;
 import org.xml.sax.SAXException;
 
 import javax.servlet.ServletException;
@@ -22,7 +21,6 @@ import java.util.Set;
 public class RequestSolver {
 
     private static final XMLService XML_SERVICE = ServiceFactory.getXMLService();
-    private static final XSDValidator VALIDATOR = new XSDValidator();
     private static final String PARSE_TYPE = "parserType";
     private static final String UNTREATED_GEM_RESULT_SET = "untreatedGemResultSet";
     private static final String TREATED_GEM_RESULT_SET = "treatedGemResultSet";

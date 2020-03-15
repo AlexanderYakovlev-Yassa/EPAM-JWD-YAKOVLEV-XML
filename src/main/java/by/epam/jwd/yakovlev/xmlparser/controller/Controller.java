@@ -15,10 +15,6 @@ import java.io.IOException;
 @MultipartConfig
 public class Controller extends HttpServlet {
 
-    private static final String UPLOAD_DIRECTORY = "upload";
-
-    private Object DOMGemsBuilder;
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -30,8 +26,6 @@ public class Controller extends HttpServlet {
         RequestSolver requestSolver = new RequestSolver(request, response);
 
         Pages nextPage = null;
-
-
         nextPage = requestSolver.solveRequest();
 
         request.getRequestDispatcher(nextPage.getStringLocation()).forward(request, response);
