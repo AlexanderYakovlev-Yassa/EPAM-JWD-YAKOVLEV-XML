@@ -17,22 +17,15 @@ public class XSDValidator {
 
     private static final String LANGUAGE = XMLConstants.W3C_XML_SCHEMA_NS_URI;
     private static final SchemaFactory FACTORY = SchemaFactory.newInstance(LANGUAGE);
-    private static final String XSD_SCHEMA = "src\\main\\resources\\XSDSchema\\GemsXSD.xsd";
 
-    public void validateXMLFile(InputStream XMLFileStream) throws XSDValidatorException {
-        System.out.println("XMLFileStream is null " + (XMLFileStream == null));
-        File schemaFile = new File(XSD_SCHEMA);
-        System.out.println("schemaFile " + (schemaFile.getAbsoluteFile()));
+    public void validateXMLFile(InputStream XMLFileStream, File schemaFile) throws XSDValidatorException {
+
         try {
             Schema schema = FACTORY.newSchema(schemaFile);
             Validator validator = schema.newValidator();
-            System.out.println("validator " + (validator.hashCode()));
             Source source = new StreamSource(XMLFileStream);
-            System.out.println("source " + (source.toString()));
             validator.validate(source);
-            System.out.println("OK");
         } catch (SAXException | IOException e) {
-            System.out.println("XML file is not valid because" + e.getMessage());
             throw new XSDValidatorException("XML file is not valid because" + e.getMessage(), e);
         }
     }
