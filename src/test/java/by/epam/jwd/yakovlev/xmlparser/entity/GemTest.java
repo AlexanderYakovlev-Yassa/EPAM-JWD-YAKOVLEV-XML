@@ -34,7 +34,6 @@ public class GemTest {
 
         Assert.assertTrue(gem1.hashCode() == gem2.hashCode());
         Assert.assertFalse(gem1.hashCode() == gem3.hashCode());
-        System.out.println(gem1.getPurchaseDate().toInstant());
     }
 
     private Gem getGem(){
