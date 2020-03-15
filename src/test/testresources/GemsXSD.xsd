@@ -6,15 +6,10 @@ elementFormDefault="qualified">
 
 <element name="gems">
 	<complexType>
-		<all>
-
-			<element name="gem"
-			type="tns:Gem" />
-
-			<element name="treatedGem"
-			type="tns:TreatedGem" />
-
-		</all>
+		<sequence>
+			<element name="gem" type="tns:Gem" maxOccurs="unbounded" minOccurs="0"/>
+			<element name="treatedGem" type="tns:TreatedGem" maxOccurs="unbounded" minOccurs="0"/>
+		</sequence>
 	</complexType>
 </element>
 

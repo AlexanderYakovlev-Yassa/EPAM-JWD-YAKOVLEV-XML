@@ -42,7 +42,7 @@
 		<origin>SouthAfrica</origin>
 		<purchaseDate>2020-01-21</purchaseDate>		
 	</gem>
-	<treatedGem id="A36A8766">
+	<treatedGem id="A36A8446">
 		<preciousness>precious</preciousness>
 		<name>diamond</name>		
 		<value>20</value>
@@ -68,7 +68,7 @@
 		<value>20</value>
 		<color>orange</color>
 		<origin>SouthAfrica</origin>
-      	<purchaseDate>201-01-21</purchaseDate>	
+      	<purchaseDate>2001-01-21</purchaseDate>	
 		<translucency>70</translucency>
 		<facetsCount>32</facetsCount>
 	</treatedGem>
