@@ -13,7 +13,7 @@
 
     <form name="Simple" action="start" method="post" enctype="multipart/form-data">
         <p align="center">XML file: </p>
-        <p align="center"><input type="file" name="sourceFile" /></p>
+        <p align="center"><input type="file" name="sourceFile" accept="application/xml"/></p>
         <p align="center">Parser type:
         <input type="radio" name="parserType" value="DOM" checked /> DOM,
         <input type="radio" name="parserType" value="SAX"  /> SAX,
