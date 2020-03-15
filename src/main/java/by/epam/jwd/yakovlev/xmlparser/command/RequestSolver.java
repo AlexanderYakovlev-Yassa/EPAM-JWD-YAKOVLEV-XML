@@ -55,6 +55,10 @@ public class RequestSolver {
             throw new ServletException("there are no gems or read of gems is failed");
         }
 
+        if (gemsSet.size() == 0) {
+            throw new ServletException("there are no gems or read of gems is failed");
+        }
+
         Set<TreatedGem> treatedGems = new HashSet<>();
         Set<Gem> untreatedGems = new HashSet<>();
         for (Gem gem : gemsSet) {
